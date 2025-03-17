@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitaFlex Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f4f4f4;
+      color: #111;
+    }
+    nav {
+      background: #0f0f0f;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    nav .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .language-select {
+      margin-left: auto;
+      margin-right: 10px;
+      background: #fff;
+      color: #111;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    header {
+      background: linear-gradient(to right, #0f0f0f, #1f1f1f);
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #00c853;
+      color: white;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .catalog, .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">VitaFlex</div>
+    <ul>
+      <li><a id="nav-home" href="#">Home</a></li>
+      <li><a id="nav-products" href="#catalogo">Produkte</a></li>
+      <li><a id="nav-about" href="#sobre">Über uns</a></li>
+      <li><a id="nav-contact" href="#kontakt">Kontakt</a></li>
+      <li><a id="nav-cart" href="#cart">Warenkorb</a></li>
+    </ul>
+    <select id="language-selector" class="language-select">
+      <option value="de">Deutsch</option>
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
+  </nav>
+
+  <header>
+    <h1 id="hero-title">Willkommen bei VitaFlex 🏋️‍♂️🌿</h1>
+    <p id="hero-subtitle">Dein Shop für Fitnesszubehör und Naturprodukte ⚡</p>
+    <a href="#catalogo" class="btn" id="catalog-btn">Katalog ansehen</a>
+  </header>
+
+  <section class="catalog" id="catalogo">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1589308078055-ebbc249f1b0a" alt="Protein Bar">
+      <h4 id="product1-title">Protein Bar</h4>
+      <p id="product1-desc">Eiweißriegel mit natürlichen Zutaten, ideal für unterwegs.</p>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1600185365483-26d7a4eb4c53" alt="Fitness Shake">
+      <h4 id="product2-title">Fitness Shake</h4>
+      <p id="product2-desc">Natürliches Proteinpulver zur Unterstützung deiner Leistung.</p>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1627483298713-0a2d90b8ff38" alt="Resistance Bands">
+      <h4 id="product3-title">Widerstandsbänder</h4>
+      <p id="product3-desc">Vielseitige Trainingsbänder für jedes Fitnesslevel.</p>
+    </div>
+  </section>
+
+  <section class="section" id="kontakt">
+    <h2 id="contact-heading">Kontakt</h2>
+    <form action="https://formsubmit.co/your@email.com" method="POST">
+      <input type="text" name="name" placeholder="Name" required><br>
+      <input type="email" name="email" placeholder="E-Mail" required><br>
+      <textarea name="message" rows="4" placeholder="Nachricht" required></textarea><br>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="/thank-you">
+      <button type="submit">Senden</button>
+    </form>
+  </section>
+
+  <section class="section" id="cart">
+    <h2 id="cart-heading">Warenkorb</h2>
+    <p id="cart-placeholder">Dein Warenkorb ist leer.</p>
+  </section>
+
+  <footer id="footer-text">
+    &copy; 2025 VitaFlex. Alle Rechte vorbehalten.
+  </footer>
+
+  <script>
+    const catalogTranslations = {
+      de: [["Protein Bar", "Eiweißriegel mit natürlichen Zutaten, ideal für unterwegs."],["Fitness Shake", "Natürliches Proteinpulver zur Unterstützung deiner Leistung."],["Widerstandsbänder", "Vielseitige Trainingsbänder für jedes Fitnesslevel."]],
+      es: [["Barra de Proteína", "Barra nutritiva con ingredientes naturales, ideal para llevar."],["Batido Fitness", "Proteína natural para potenciar tu rendimiento."],["Bandas de Resistencia", "Bandas versátiles para cualquier nivel de entrenamiento."]],
+      en: [["Protein Bar", "Protein bar with natural ingredients, perfect on the go."],["Fitness Shake", "Natural protein powder to support your performance."],["Resistance Bands", "Versatile bands for all fitness levels."]]
+    };
+    const navTranslations = {
+      de: ["Home", "Produkte", "Über uns", "Kontakt", "Warenkorb", "© 2025 VitaFlex. Alle Rechte vorbehalten.", "Kontakt", "Dein Warenkorb ist leer.", "Willkommen bei VitaFlex 🏋️‍♂️🌿", "Dein Shop für Fitnesszubehör und Naturprodukte ⚡", "Katalog ansehen"],
+      es: ["Inicio", "Productos", "Sobre nosotros", "Contacto", "Carrito", "© 2025 VitaFlex. Todos los derechos reservados.", "Contacto", "Tu carrito está vacío.", "Bienvenido a VitaFlex 🏋️‍♂️🌿", "Tu tienda de accesorios fitness y productos naturales ⚡", "Ver Catálogo"],
+      en: ["Home", "Products", "About us", "Contact", "Cart", "© 2025 VitaFlex. All rights reserved.", "Contact", "Your cart is empty.", "Welcome to VitaFlex 🏋️‍♂️🌿", "Your store for fitness gear and natural products ⚡", "Browse Catalog"]
+    };
+    const updateContent = lang => {
+      const [home, products, about, contact, cart, footer, contactTitle, cartText, heroTitle, heroSub, cta] = navTranslations[lang];
+      document.getElementById("nav-home").textContent = home;
+      document.getElementById("nav-products").textContent = products;
+      document.getElementById("nav-about").textContent = about;
+      document.getElementById("nav-contact").textContent = contact;
+      document.getElementById("nav-cart").textContent = cart;
+      document.getElementById("footer-text").textContent = footer;
+      document.getElementById("contact-heading").textContent = contactTitle;
+      document.getElementById("cart-heading").textContent = cart;
+      document.getElementById("cart-placeholder").textContent = cartText;
+      document.getElementById("hero-title").textContent = heroTitle;
+      document.getElementById("hero-subtitle").textContent = heroSub;
+      document.getElementById("catalog-btn").textContent = cta;
+      catalogTranslations[lang].forEach((prod, i) => {
+        document.getElementById(`product${i + 1}-title`).textContent = prod[0];
+        document.getElementById(`product${i + 1}-desc`).textContent = prod[1];
+      });
+    };
+    document.getElementById("language-selector").addEventListener("change", function () {
+      updateContent(this.value);
+    });
+    updateContent("de");
+  </script>
+</body>
+</html>
